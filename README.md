@@ -10,11 +10,11 @@ CDC native logical replication and monitoring
 
 ## steps
 - (source db)
-        CREATE PUBLICATION mypublication FOR TABLE users, departments; 
+        <b>CREATE PUBLICATION mypublication FOR TABLE users, departments; </b>
 - (target db)
-        CREATE SUBSCRIPTION mysub
-        CONNECTION 'host=192.168.1.50 port=5432 user=foo dbname=foodb' ## Ideally, this content should be read from a file since password is visible in system table
-        PUBLICATION mypublication; 
+       <b> CREATE SUBSCRIPTION mysub
+        CONNECTION 'host=192.168.1.50 port=5432 user=foo dbname=foodb'
+        PUBLICATION mypublication; </b>
 - (airflow for monitoring the syncs / schema changes updates)
         - logical_replication_sync_check.py will monitor the sync between db's
         - logical_replication_schema_fix.py will fix the sync when schema changes happens   like dropping/adding columns
