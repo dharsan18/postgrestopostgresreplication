@@ -1,4 +1,4 @@
-# postgrestopostgresreplication
+# postgres to postgres replication
 CDC native logical replication and monitoring
 
 
